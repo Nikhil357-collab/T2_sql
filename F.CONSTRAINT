@@ -1,0 +1,29 @@
+| Column Name   | Data Type    | Description                        
+| ------------- | ------------ | ---------------------------------- 
+| id            | INT          | Unique identifier for each student Ensures each record is unique
+                                 Prevents duplicate students
+                                 Improves indexing and performance
+| name          | VARCHAR(100) | Student full name -Prevents incomplete records
+                                                    Ensures mandatory information is always present        
+| email         | VARCHAR(150) | Student email address             |
+| age           | INT          | Student age                        
+| mobile_number | VARCHAR(15)  | Contact number                     
+
+### Constraints:
+
+Enforce business rules at the database level
+
+Prevent invalid or duplicate data
+
+Reduce application-level validation complexity
+
+Protect long-term data quality
+#########------------------------------##############-----------------------################---------------
+-- Duplicate PRIMARY KEY (will fail)
+INSERT INTO students VALUES (1, 'Test', 'test@gmail.com', 22, '9999999999');
+
+-- Duplicate UNIQUE email (will fail)
+INSERT INTO students VALUES (4, 'Test', 'rahul.sharma@gmail.com', 22, '8888888888');
+
+-- NULL value in NOT NULL column (will fail)
+INSERT INTO students VALUES (5, NULL, 'null@gmail.com', 20, '7777777777');
